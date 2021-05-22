@@ -73,15 +73,65 @@ int main()
 	std::cout << "]" << std::endl;
 	std::cout << "Call by subscript operator\t:[" << multiDef["anna"] << std::endl;
 	std::cout << "fetch the element and add 1 to current value\t:[ " << ++multiDef["anna"] << std::endl;
+	std::set<int> setNum{ 1,2,3,4,5,67,9 };
+	setNum.find(1);
+	std::cout << "Finding element in map" << std::endl;
+	std::map<std::string, int> mapNum;
+	mapNum.insert(std::make_pair("michael", 987666));
+	mapNum.insert(std::make_pair("john", 787668));
+	if(mapNum.find("john")==mapNum.end())
+	{
+		std::cout << "find john and his number\t:["<<mapNum["john"]<<std::endl;
+	}
+	else{
+		std::cout << "john not exist" << std::endl;
+	}
+	std::map<std::string, int> mapTest;
+	mapTest.insert(std::make_pair("michael", 123));
+	mapTest.insert(std::make_pair("michael test", 1123));
+	mapTest.insert(std::make_pair("michael pair", 2123));
+	
+	std::cout << "For multimap" << std::endl;
+	std::multimap<std::string, int>  multimapNum;
+	multimapNum.insert(std::make_pair("medan", 987767));
+	multimapNum.insert(std::make_pair("medan", 887767));
+	multimapNum.insert(std::make_pair("medan", 687767));
+	multimapNum.insert(std::make_pair("jakarta", 687767));
 
+
+	std::string nameToF = "medan";
+	auto count = multimapNum.count(nameToF);
+	auto findMichael = multimapNum.find(nameToF);
+	std::cout << "show michael number \t:[";
+	while (count)
+	{
+		std::cout << findMichael->second << "|";
+		++findMichael;
+		--count;
+	}
+	std::cout << "]" << std::endl;
+
+	auto anotherTest = 98766;
+	std::map<int, std::string> another;
+	another.insert(std::make_pair(98766, "Michael"));
+	another.insert(std::make_pair(98764, "John"));
+	auto findTestNum = another.find(anotherTest);
+	if(!another.empty())
+	{
+		if(findTestNum->first==anotherTest)
+		{
+			std::cout << "Find number \t: [" << findTestNum->first << "name" << findTestNum->second << "]"<<std::endl;
+		}
+	}
+	else
+	{
+		std::cout << "test not success find any data" << std::endl;
+	}
+	
+	
+	
 	
 
-	
-	
-	
-	
-
-	
 	return 0;
 
 }
