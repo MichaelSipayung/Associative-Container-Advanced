@@ -185,8 +185,25 @@ int main()
 	}
 	std::cout << "]" << std::endl;
 
+	std::cout << "std::hash -> get a hash value from an argument\t:[";
+	std::string myArg("Michael"); 
+	std::string myArg1("Michaels");
+	std::hash<std::string> mystdHash;
+	std::cout << std::endl;
+	std::cout << "1.Argument \t: [ " << myArg << " and it hash value \t: " << mystdHash(myArg) << "]" << std::endl;
+	std::cout << "2.Argument \t: [ " << myArg << " and it hash value \t: " << mystdHash(myArg1) << "]" << std::endl;
 
+	std::cout << "Working with bitset" << std::endl;
+	constexpr std::bitset<4> bit{ 0xA};
+	constexpr std::bitset<28> bit2{ 0xABCDEF };
+	
+	std::cout << "Testing bit of 0xA \t:[ " << bit << "]"<<  std::endl;
+	std::cout << "testing cassert library for debugging " << std::endl;
 
+	//int* cNULL = NULL; //debugging purpose 
+	//print_num(cNULL);
+
+	//debug(-98.09);
 
 	return 0;
 
